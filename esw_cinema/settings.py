@@ -82,6 +82,19 @@ if DEBUG:
             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         }
     }
+    """
+    # Postgre local (Criar banco e usuário previamente)
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'esw_cinema',
+            'USER': 'pedro',
+            'PASSWORD': '1902',
+            'HOST': 'localhost',
+            'PORT': '5432',
+        }
+    }
+    """
 else:
     DATABASES = {
         'default': dj_database_url.config()
