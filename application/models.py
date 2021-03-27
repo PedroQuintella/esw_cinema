@@ -7,7 +7,7 @@ class Usuario(models.Model):
     nome = models.CharField('Nome', max_length=100)
     cpf = models.CharField('CPF', max_length=11, unique=True, help_text='Digite sem pontos e traços.')
     email = models.EmailField('Email', unique=True)
-    ''' senha = models.CharField('Senha', max_length=30) '''
+    senha = models.CharField('Senha', max_length=30)
 
     class Meta:
         verbose_name = 'Usuário'
@@ -33,7 +33,7 @@ class Filme(models.Model):
 
 
 class Compra(models.Model):
-    codigo = models.AutoField('Código', primary_key=True)
+    codigo = models.IntegerField('Código')
     OPCOES = (
         ('AC', 'AC'),
         ('AL', 'AL'),
