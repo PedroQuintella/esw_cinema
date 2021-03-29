@@ -1,6 +1,14 @@
 from django.db import models
+from stdimage.models import StdImageField
+import uuid
 
 # Create your models here.
+
+
+def get_file_path(_instance, filename):
+    ext = filename.split('.')[-1]
+    filename = f'{uuid.uuid4()}.{ext}'
+    return filename
 
 
 class Usuario(models.Model):
@@ -19,7 +27,7 @@ class Usuario(models.Model):
 
 class Filme(models.Model):
     titulo = models.CharField('Título', max_length=200)
-    ''' cartaz = models.ImageField() '''
+    cartaz = StdImageField('Cartaz', null=True, blank=True, upload_to=get_file_path, variations={'thumb': {'width': 240, 'height': 356, 'crop': True}})
     sinopse = models.TextField('Sinopse', max_length=1000)
     trailer = models.URLField('Trailer', null=True, blank=True)
     dataEstreia = models.DateField('Data de Estreia', null=True, blank=True, help_text='Use este formato: DD/MM/AAAA')
@@ -116,7 +124,7 @@ class Assento(models.Model):
 
 
 class Ingresso(models.Model):
-    codigo = models.AutoField('Código', primary_key=True)
+    codigo = models.IntegerField('Código')
     compra = models.ForeignKey(Compra, on_delete=models.DO_NOTHING)
     sessao = models.ForeignKey(Sessao, null=True, on_delete=models.SET_NULL)
     sala = models.ForeignKey(Sala, null=True, on_delete=models.SET_NULL)
