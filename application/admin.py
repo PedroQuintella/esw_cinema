@@ -12,17 +12,18 @@ class UsuarioAdmin(admin.ModelAdmin):
 
 @admin.register(Filme)
 class FilmeAdmin(admin.ModelAdmin):
-    list_display = ('titulo', 'dataEstreia')
+    list_display = ('titulo', 'cartaz', 'trailer', 'dataEstreia')
 
 
 @admin.register(Compra)
 class CompraAdmin(admin.ModelAdmin):
-    list_display = ('codigo', 'estado', 'cidade', 'cep', 'endereco', 'valor')
+    list_display = ('codigo', 'usuario', 'estado', 'cidade', 'cep', 'endereco', 'valor')
 
 
 @admin.register(Sala)
 class SalaAdmin(admin.ModelAdmin):
     list_display = ('numero',)
+
 
 @admin.register(Sessao)
 class SessaoAdmin(admin.ModelAdmin):
@@ -31,7 +32,7 @@ class SessaoAdmin(admin.ModelAdmin):
 
 @admin.register(Assento)
 class AssentoAdmin(admin.ModelAdmin):
-    list_display = ('numero', 'sala')
+    list_display = ('numero', 'sala', 'disponibilidade')
 
 
 @admin.register(Ingresso)

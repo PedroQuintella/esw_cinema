@@ -114,6 +114,11 @@ class Sessao(models.Model):
 class Assento(models.Model):
     numero = models.IntegerField('Assento')
     sala = models.ForeignKey(Sala, on_delete=models.CASCADE)
+    STATUS = (
+        ('Disponível', 'Disponível'),
+        ('Indisponível', 'Indisponível'),
+    )
+    disponibilidade = models.CharField('Disponibilidade', max_length=100, choices=STATUS)
 
     class Meta:
         verbose_name = 'Assento'
