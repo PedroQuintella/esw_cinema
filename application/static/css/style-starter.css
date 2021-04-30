@@ -4949,7 +4949,7 @@ input[type="button"].btn-block {
 .navbar-light .navbar-nav .active>.nav-link,
 .navbar-light .navbar-nav .nav-link.show,
 .navbar-light .navbar-nav .nav-link.active {
-  color: var(--theme-rose);
+  color: var(--theme-title);
 }
 
 .navbar-light .navbar-toggler {
@@ -14492,7 +14492,7 @@ p.title-para {
   color: var(--theme-title);
 }
 
-.w3l-header .navbar-nav .nav-item.active a.nav-link {
+.w3l-header .navbar-nav .nav-item.active {
   color: var(--theme-rose);
 }
 
@@ -15855,6 +15855,10 @@ button.owl-next {
   margin: 20px 0 7px 0;
   color: var(--theme-title);
   display: inline-block;
+}
+
+a.title-gd {
+  height: 85px;
 }
 
 .w3l-grids .vhny-grid {

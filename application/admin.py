@@ -12,7 +12,7 @@ class UsuarioAdmin(admin.ModelAdmin):
 
 @admin.register(Filme)
 class FilmeAdmin(admin.ModelAdmin):
-    list_display = ('titulo', 'cartaz', 'trailer', 'dataEstreia')
+    list_display = ('titulo', 'cartaz', 'duracao', 'trailer', 'dataEstreia')
 
 
 @admin.register(Compra)
