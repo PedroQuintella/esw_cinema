@@ -20,8 +20,7 @@
 								</a>
 								<!-- dialog itself, mfp-hide class is required to make dialog hidden -->
 								<div id="small-dialog1" class="zoom-anim-dialog mfp-hide">
-									<iframe src="https://player.vimeo.com/video/358205676" allow="autoplay; fullscreen"
-										allowfullscreen=""></iframe>
+									<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/spJoZReeIeQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 								</div>
 							</div>
 						</div>
@@ -41,8 +40,7 @@
 								</a>
 								<!-- dialog itself, mfp-hide class is required to make dialog hidden -->
 								<div id="small-dialog2" class="zoom-anim-dialog mfp-hide">
-									<iframe src="https://player.vimeo.com/video/395376850" allow="autoplay; fullscreen"
-										allowfullscreen=""></iframe>
+									<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/TTIbWKEUPnc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 								</div>
 							</div>
 						</div>
@@ -62,8 +60,7 @@
 								</a>
 								<!-- dialog itself, mfp-hide class is required to make dialog hidden -->
 								<div id="small-dialog3" class="zoom-anim-dialog mfp-hide">
-									<iframe src="https://player.vimeo.com/video/389969665" allow="autoplay; fullscreen"
-										allowfullscreen=""></iframe>
+									<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/621pfj0EfIc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 								</div>
 							</div>
 						</div>
@@ -83,8 +80,7 @@
 								</a>
 								<!-- dialog itself, mfp-hide class is required to make dialog hidden -->
 								<div id="small-dialog4" class="zoom-anim-dialog mfp-hide">
-									<iframe src="https://player.vimeo.com/video/323491174" allow="autoplay; fullscreen"
-										allowfullscreen=""></iframe>
+									<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/PRyOvcOhtms" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 								</div>
 							</div>
 						</div>
@@ -113,7 +109,7 @@
 					{% for filme in filmes %}
 						<div class="item vhny-grid">
 							<div class="box16">
-								<a href="{% url 'generos' %}">
+								<a href="{% url 'filme-detalhe' id=filme.id %}">
 									<figure>
 										<img class="img-fluid" src="{{ filme.cartaz.thumb.url }}" alt="{{ filme.titulo }}">
 									</figure>
@@ -153,7 +149,7 @@
 					{% for lancamento in lancamentos %}
 						<div class="item vhny-grid">
 							<div class="box16 mb-0">
-								<a href="{% url 'generos' %}">
+								<a href="{% url 'filme-detalhe' id=lancamento.id %}">
 									<figure>
 										<img class="img-fluid" src="{{ lancamento.cartaz.thumb.url }}" alt="">
 									</figure>
@@ -191,9 +187,9 @@
 							<div class="container">
 								<div class="mid-info">
 									<span class="sub-text">Comédia</span>
-									<h3>Jumanji: The Next Level</h3>
+									<h3>Jumanji: Próxima Fase</h3>
 									<p>2019 ‧ Comédia/Ação ‧ 2h 3m</p>
-									<a class="watch" href="{% url 'generos' %}"><span class="fa fa-play"
+									<a class="watch" href="https://www.youtube.com/watch?v=PEuMN4_lnPs"><span class="fa fa-play"
 											aria-hidden="true"></span>
 										Trailer</a>
 								</div>
@@ -209,7 +205,7 @@
 									<span class="sub-text">Aventura</span>
 									<h3>Dolittle</h3>
 									<p>2020 ‧ Família/Aventura ‧ 1h 41m</p>
-									<a class="watch" href="{% url 'generos' %}"><span class="fa fa-play"
+									<a class="watch" href="https://www.youtube.com/watch?v=iNWUTtYE7UM"><span class="fa fa-play"
 											aria-hidden="true"></span>
 										Trailer</a>
 								</div>
@@ -223,9 +219,9 @@
 							<div class="container">
 								<div class="mid-info">
 									<span class="sub-text">Ação</span>
-									<h3>Bad Boys for Life</h3>
+									<h3>Bad Boys para sempre</h3>
 									<p>2020 ‧ Comédia/Ação ‧ 2h 4m</p>
-									<a class="watch" href="{% url 'generos' %}"><span class="fa fa-play"
+									<a class="watch" href="https://www.youtube.com/watch?v=jCCGGYvFjlw"><span class="fa fa-play"
 											aria-hidden="true"></span>
 										Trailer</a>
 								</div>
@@ -258,7 +254,7 @@
 										<div class="col-lg-4 new-relise-gd mt-lg-0 mt-0">
 											<div class="slider-info">
 												<div class="img-circle">
-													<a href="{% url 'generos' %}">
+													<a href="{% url 'filme-detalhe' id=lancamento.id %}">
 
 														<img src="{{ lancamento.cartaz.thumb.url }}" class="img-fluid"
 															alt="author image">
@@ -270,7 +266,7 @@
 												</div>
 												<div class="message">
 													<p>Português Brasileiro</p>
-													<a class="author-book-title" href="{% url 'generos' %}">{{ lancamento.titulo }}</a>
+													<a class="author-book-title" href="{% url 'filme-detalhe' id=lancamento.id %}">{{ lancamento.titulo }}</a>
 													<h4> <span class="post"><span class="fa fa-clock-o"> </span>{{ lancamento.duracao }}
 
 														</span>
@@ -291,7 +287,7 @@
 									<div class="col-lg-4 new-relise-gd mt-lg-0 mt-0">
 										<div class="slider-info">
 											<div class="img-circle">
-												<a href="{% url 'generos' %}"><img src="{{ filme.cartaz.thumb.url }}" class="img-fluid"
+												<a href="{% url 'filme-detalhe' id=filme.id %}"><img src="{{ filme.cartaz.thumb.url }}" class="img-fluid"
 														alt="author image">
 													<div class="overlay-icon">
 
@@ -301,7 +297,7 @@
 											</div>
 											<div class="message">
 												<p>Português Brasileiro</p>
-												<a class="author-book-title" href="{% url 'generos' %}">{{ filme.titulo }}</a>
+												<a class="author-book-title" href="{% url 'filme-detalhe' id=filme.id %}">{{ filme.titulo }}</a>
 												<h4> <span class="post"><span class="fa fa-clock-o"> </span>{{ filme.duracao }}
 
 													</span>
@@ -322,7 +318,7 @@
 										<div class="col-lg-4 new-relise-gd mt-lg-0 mt-0">
 											<div class="slider-info">
 												<div class="img-circle">
-													<a href="{% url 'generos' %}"><img src="{{ filme.cartaz.thumb.url }}" class="img-fluid"
+													<a href="{% url 'filme-detalhe' id=filme.id %}"><img src="{{ filme.cartaz.thumb.url }}" class="img-fluid"
 															alt="author image">
 														<div class="overlay-icon">
 
@@ -332,7 +328,7 @@
 												</div>
 												<div class="message">
 													<p>Português Brasileiro</p>
-													<a class="author-book-title" href="{% url 'generos' %}">{{ filme.titulo }}</a>
+													<a class="author-book-title" href="{% url 'filme-detalhe' id=filme.id %}">{{ filme.titulo }}</a>
 													<h4> <span class="post"><span class="fa fa-clock-o"> </span>{{ filme.duracao }}
 
 														</span>

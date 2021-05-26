@@ -129,7 +129,7 @@
 					{% for filme in filmesDisponiveis %}
 						<div class="item vhny-grid">
 							<div class="box16 mb-0">
-								<a href="#">
+								<a href="{% url 'filme-detalhe' id=filme.id %}">
 									<figure>
 										<img class="img-fluid" src="{{ filme.cartaz.thumb.url }}" alt="">
 									</figure>

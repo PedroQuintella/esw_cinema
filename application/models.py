@@ -102,7 +102,7 @@ class Sessao(models.Model):
     data = models.DateField('Data', help_text='Use este formato: DD/MM/AAAA')
     horario = models.TimeField('Horário', help_text='Use este formato: HH:MM')
     filme = models.ForeignKey(Filme, on_delete=models.CASCADE)
-    sala = models.OneToOneField(Sala, null=True, on_delete=models.SET_NULL)
+    sala = models.ForeignKey(Sala, null=True, on_delete=models.SET_NULL)
 
     class Meta:
         verbose_name = 'Sessão'

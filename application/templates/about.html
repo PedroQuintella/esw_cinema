@@ -220,7 +220,7 @@
 						{% for lancamento in lancamentos %}
 							<div class="item vhny-grid">
 								<div class="box16">
-									<a href="{% url 'generos' %}">
+									<a href="{% url 'filme-detalhe' id=lancamento.id %}">
 										<figure>
 											<img class="img-fluid" src="{{ lancamento.cartaz.thumb.url }}" alt="{{ lancamento.titulo }}">
 										</figure>

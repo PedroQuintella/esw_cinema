@@ -2,8 +2,8 @@ from django.shortcuts import render
 
 # Create your views here.
 
-from django.views.generic import TemplateView
-from .models import Filme
+from django.views.generic import TemplateView, ListView
+from .models import Filme, Sessao
 
 
 class IndexView(TemplateView):
@@ -34,3 +34,20 @@ class GenerosView(TemplateView):
         context['filmesDisponiveis'] = Filme.objects.order_by('-dataEstreia').all()
         return context
 
+
+class FilmeDetalheView(ListView):
+    template_name = 'film-detail.html'
+    model = Sessao
+    paginate_by = 9
+    ordering = ['data']
+
+    def get_context_data(self, **kwargs):
+        context = super(FilmeDetalheView, self).get_context_data(**kwargs)
+        id = self.kwargs['id']
+        context['filme'] = Filme.objects.filter(id=id).first
+        context['lancamentos'] = Filme.objects.order_by('-dataEstreia')[0:6]
+        return context
+
+    def get_queryset(self):
+        id = self.kwargs['id']
+        return Sessao.objects.filter(filme_id=id).order_by('data')

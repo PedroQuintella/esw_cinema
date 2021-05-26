@@ -1,0 +1,174 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>ESW Cinema</title>
+	<!-- Template CSS -->
+	<link rel="stylesheet" href="{% static 'css/style-starter.css' %}">
+	<!-- Template CSS -->
+	<link href="//fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,600&display=swap"
+		rel="stylesheet">
+	<!-- Template CSS -->
+</head>
+
+<body>
+    <!-- header -->
+	<header id="site-header" class="w3l-header fixed-top">
+		<!--/nav-->
+			{% include 'navbar.html' %}
+		<!--//nav-->
+	</header>
+	<!-- //header -->
+
+    <!--/breadcrumbs -->
+	<div class="breadcrumbs-padding">
+        <div class="w3l-breadcrumbs">
+            <nav id="breadcrumbs" class="breadcrumbs">
+                <div class="container page-wrapper">
+                    <a href="{% url 'generos' %}">Filmes</a> » <span class="breadcrumb_last" aria-current="page">{{ filme.titulo }}</span>
+                </div>
+            </nav>
+        </div>
+    </div>
+	<!--//breadcrumbs -->
+
+    <section class="w3l-grids">
+        <div class="grids-main movie-detail-padding">
+            <div id="movie-detail" class="container py-lg-3">
+                <div class="headerhny-title">
+                    <div class="w3l-title-grids">
+                        <div class="headerhny-left">
+                            <h3 class="hny-title">{{ filme.titulo }}</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="movie-details">
+                        <div class="item vhny-grid">
+                            <div id="box-movie-detail" class="box16">
+                                <figure>
+                                    <img class="img-fluid" src="{{ filme.cartaz.thumb.url }}" alt="{{ filme.titulo }}">
+                                </figure>
+                            </div>
+                            <div class="button-center text-center mt-4">
+								<a href="{{ filme.trailer }}" class="btn watch-button">Trailer</a>
+							</div>
+                        </div>
+                        <div class="details-div">
+                            <div>
+                                <h3 class="title-style">Duração</h3>
+                                <p class="movie-synopsis text-style">{{ filme.duracao }}</p>
+                            </div>
+                            <div>
+                                <h3 class="title-style">Sinopse</h3>
+                                <p class="movie-synopsis text-style">{{ filme.sinopse }}</p>
+                            </div>
+                            <div>
+                                <h3 class="title-style">Data de estreia</h3>
+                                <p class="movie-synopsis text-style">{{ filme.dataEstreia }}</p>
+                            </div>
+                            <div>
+                                <h3 class="title-style">Sessões disponíveis</h3>
+                                <form class="session-form">
+                                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                      {% for s in page_obj %}
+                                        <label class="session-button btn btn-secondary">
+                                            <input type="radio" name="options" id="options{{ s.id }}" autocomplete="off">{{ s.data.day }}/{{ s.data.month }}/{{ s.data.year }} - {{ s.horario }} <br> Sala {{ s.sala }}
+                                        </label>
+                                      {% endfor %}
+                                    </div>
+                                    <button type="submit" class="btn btn-primary buy-button">Comprar</button>
+                                </form>
+                            </div>
+                        </div>
+                </div>
+            </div>
+            <div class="container py-lg-3">
+				<div class="headerhny-title">
+					<div class="w3l-title-grids">
+						<div class="headerhny-left">
+							<h3 class="hny-title">Lançamentos</h3>
+						</div>
+						<div class="headerhny-right text-lg-right">
+						</div>
+					</div>
+				</div>
+				<div class="owl-three owl-carousel owl-theme">
+					{% for lancamento in lancamentos %}
+						<div class="item vhny-grid">
+							<div class="box16 mb-0">
+								<a href="{% url 'filme-detalhe' id=lancamento.id %}">
+									<figure>
+										<img class="img-fluid" src="{{ lancamento.cartaz.thumb.url }}" alt="">
+									</figure>
+									<div class="box-content">
+										<h4> <span class="post"><span class="fa fa-clock-o"> </span>{{ lancamento.duracao }}
+
+											</span>
+
+											<span class="post fa fa-heart text-right"></span>
+										</h4>
+									</div>
+									<span class="fa fa-play video-icon" aria-hidden="true"></span>
+								</a>
+							</div>
+							<h3> <a class="title-gd" href="{% url 'generos' %}">{{ lancamento.titulo }}</a></h3>
+							<p> </p>
+							<div class="button-center text-center mt-4">
+								<a href="{{ lancamento.trailer }}" class="btn watch-button">Assista ao Trailer</a>
+							</div>
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+        </div>
+    </section>
+    <!-- footer-66 -->
+		{% include 'footer.html' %}
+	<!--//footer-66 -->
+</body>
+</html>
+
+<!-- JavaScript -->
+    <script src="{% static 'js/jquery-1.9.1.min.js' %}"></script>
+    <script src="{% static 'js/easyResponsiveTabs.js' %}"></script>
+    <!--/theme-change-->
+    <script src="{% static 'js/theme-change.js' %}"></script>
+    <!-- //theme-change-->
+    <script src="{% static 'js/owl.carousel.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script>
+			$(document).ready(function () {
+				$('.owl-three').owlCarousel({
+					loop: true,
+					margin: 20,
+					nav: false,
+					responsiveClass: true,
+					autoplay: true,
+					autoplayTimeout: 5000,
+					autoplaySpeed: 1000,
+					autoplayHoverPause: false,
+					responsive: {
+						0: {
+							items: 2,
+							nav: false
+						},
+						480: {
+							items: 2,
+							nav: true
+						},
+						667: {
+							items: 3,
+							nav: true
+						},
+						1000: {
+							items: 5,
+							nav: true
+						}
+					}
+				})
+			})
+		</script>
+<!--//JavaScript -->
