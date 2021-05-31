@@ -8,19 +8,19 @@
 						<div class="right-side">
 							<div class="row footer-about">
 								<div class="col-md-3 col-6 footer-img mb-lg-0 mb-4">
-									<a href="{% url 'generos' %}"><img class="img-fluid" src="{% static 'images/banner1.jpg' %}"
+									<a href="{% url 'filmes' %}"><img class="img-fluid" src="{% static 'images/banner1.jpg' %}"
 											alt=""></a>
 								</div>
 								<div class="col-md-3 col-6 footer-img mb-lg-0 mb-4">
-									<a href="{% url 'generos' %}"><img class="img-fluid" src="{% static 'images/banner2.jpg' %}"
+									<a href="{% url 'filmes' %}"><img class="img-fluid" src="{% static 'images/banner2.jpg' %}"
 											alt=""></a>
 								</div>
 								<div class="col-md-3 col-6 footer-img mb-lg-0 mb-4">
-									<a href="{% url 'generos' %}"><img class="img-fluid" src="{% static 'images/banner3.jpg' %}"
+									<a href="{% url 'filmes' %}"><img class="img-fluid" src="{% static 'images/banner3.jpg' %}"
 											alt=""></a>
 								</div>
 								<div class="col-md-3 col-6 footer-img mb-lg-0 mb-4">
-									<a href="{% url 'generos' %}"><img class="img-fluid" src="{% static 'images/banner4.jpg' %}"
+									<a href="{% url 'filmes' %}"><img class="img-fluid" src="{% static 'images/banner4.jpg' %}"
 											alt=""></a>
 								</div>
 							</div>
@@ -30,10 +30,9 @@
 								<div class="col-md-3 col-sm-6 sub-two-right mt-5">
 									<h6>Filmes</h6>
 									<ul>
-										<li><a href="#">Filmes Disponíveis</a></li>
-										<li><a href="#">Lançamentos</a></li>
-										<li><a href="#">Gêneros</a></li>
-										<li><a href="#">Trailers</a></li>
+										<li><a href="{% url 'index' %}">Filmes Disponíveis</a></li>
+										<li><a href="{% url 'index' %}">Lançamentos</a></li>
+										<li><a href="{% url 'filmes' %}">Todos os Filmes</a></li>
 									</ul>
 								</div>
 								<div class="col-md-3 col-sm-6 sub-two-right mt-5">
@@ -41,16 +40,17 @@
 									<ul>
 										<li><a href="{% url 'index' %}">Início</a> </li>
 										<li><a href="{% url 'sobre' %}">Sobre</a> </li>
+										<li><a href="{% url 'filmes' %}">Filmes</a> </li>
 									</ul>
 								</div>
 								<div class="col-md-3 col-sm-6 sub-two-right mt-5">
 									<h6>Por Gêneros</h6>
 									<ul>
-										<li><a href="{% url 'generos' %}">Ação</a></li>
-										<li><a href="{% url 'generos' %}">Drama</a></li>
-										<li><a href="{% url 'generos' %}">Família</a></li>
-										<li><a href="{% url 'generos' %}">Terror</a></li>
-										<li><a href="{% url 'generos' %}">Comédia</a></li>
+										<li><a href="{% url 'filmes' %}">Ação</a></li>
+										<li><a href="{% url 'filmes' %}">Drama</a></li>
+										<li><a href="{% url 'filmes' %}">Família</a></li>
+										<li><a href="{% url 'filmes' %}">Terror</a></li>
+										<li><a href="{% url 'filmes' %}">Comédia</a></li>
 									</ul>
 								</div>
 								<div class="col-md-3 col-sm-6 sub-two-right mt-5">

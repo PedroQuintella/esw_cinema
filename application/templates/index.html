@@ -98,10 +98,10 @@
 				<div class="headerhny-title">
 					<div class="w3l-title-grids">
 						<div class="headerhny-left">
-							<h3 class="hny-title">Filmes Disponíveis</h3>
+							<h3 id="filmesDisponiveis" class="hny-title">Filmes Disponíveis</h3>
 						</div>
 						<div class="headerhny-right text-lg-right">
-							<h4><a class="show-title" href="{% url 'generos' %}">Ver tudo</a></h4>
+							<h4><a class="show-title" href="{% url 'filmes' %}">Ver tudo</a></h4>
 						</div>
 					</div>
 				</div>
@@ -164,7 +164,7 @@
 									<span class="fa fa-play video-icon" aria-hidden="true"></span>
 								</a>
 							</div>
-							<h3> <a class="title-gd" href="{% url 'generos' %}">{{ lancamento.titulo }}</a></h3>
+							<h3> <a class="title-gd" href="{% url 'filme-detalhe' id=lancamento.id %}">{{ lancamento.titulo }}</a></h3>
 							<p> </p>
 							<div class="button-center text-center mt-4">
 								<a href="{{ lancamento.trailer }}" class="btn watch-button">Assista ao Trailer</a>
@@ -173,7 +173,6 @@
 					{% endfor %}
 				</div>
 			</div>
-
 		</div>
 	</section>
 	<!--grids-sec2-->
@@ -186,9 +185,9 @@
 						<div class="slider-info mid-view bg bg2">
 							<div class="container">
 								<div class="mid-info">
-									<span class="sub-text">Comédia</span>
+									<span class="sub-text">Aventura</span>
 									<h3>Jumanji: Próxima Fase</h3>
-									<p>2019 ‧ Comédia/Ação ‧ 2h 3m</p>
+									<p>2019 ‧ Aventura ‧ 02h03min</p>
 									<a class="watch" href="https://www.youtube.com/watch?v=PEuMN4_lnPs"><span class="fa fa-play"
 											aria-hidden="true"></span>
 										Trailer</a>
@@ -202,9 +201,9 @@
 						<div class="slider-info mid-view mid-top1 bg bg2">
 							<div class="container">
 								<div class="mid-info">
-									<span class="sub-text">Aventura</span>
+									<span class="sub-text">Família</span>
 									<h3>Dolittle</h3>
-									<p>2020 ‧ Família/Aventura ‧ 1h 41m</p>
+									<p>2020 ‧ Família ‧ 01h41min</p>
 									<a class="watch" href="https://www.youtube.com/watch?v=iNWUTtYE7UM"><span class="fa fa-play"
 											aria-hidden="true"></span>
 										Trailer</a>
@@ -218,9 +217,9 @@
 						<div class="slider-info mid-view mid-top2 bg bg2">
 							<div class="container">
 								<div class="mid-info">
-									<span class="sub-text">Ação</span>
+									<span class="sub-text">Comédia</span>
 									<h3>Bad Boys para sempre</h3>
-									<p>2020 ‧ Comédia/Ação ‧ 2h 4m</p>
+									<p>2020 ‧ Comédia ‧ 02h04min</p>
 									<a class="watch" href="https://www.youtube.com/watch?v=jCCGGYvFjlw"><span class="fa fa-play"
 											aria-hidden="true"></span>
 										Trailer</a>

@@ -2,7 +2,7 @@ from django.contrib import admin
 
 # Register your models here.
 
-from .models import Usuario, Filme, Compra, Sala, Sessao, Assento, Ingresso
+from .models import Usuario, Genero, Filme, Compra, Sala, Sessao, Assento, Ingresso
 
 
 @admin.register(Usuario)
@@ -10,9 +10,14 @@ class UsuarioAdmin(admin.ModelAdmin):
     list_display = ('nome', 'email')
 
 
+@admin.register(Genero)
+class GeneroAdmin(admin.ModelAdmin):
+    list_display = ('nome',)
+
+
 @admin.register(Filme)
 class FilmeAdmin(admin.ModelAdmin):
-    list_display = ('titulo', 'cartaz', 'duracao', 'trailer', 'dataEstreia')
+    list_display = ('titulo', 'cartaz', 'duracao', 'genero', 'trailer', 'dataEstreia')
 
 
 @admin.register(Compra)

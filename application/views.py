@@ -26,17 +26,18 @@ class SobreView(TemplateView):
         return context
 
 
-class GenerosView(TemplateView):
-    template_name = 'genre.html'
+class FilmesView(ListView):
+    template_name = 'movies.html'
+    model = Filme
+    paginate_by = 12
+    ordering = ['dataEstreia']
 
-    def get_context_data(self, **kwargs):
-        context = super(GenerosView, self).get_context_data(**kwargs)
-        context['filmesDisponiveis'] = Filme.objects.order_by('-dataEstreia').all()
-        return context
+    def get_queryset(self):
+        return Filme.objects.order_by('-dataEstreia').all()
 
 
 class FilmeDetalheView(ListView):
-    template_name = 'film-detail.html'
+    template_name = 'movie-detail.html'
     model = Sessao
     paginate_by = 9
     ordering = ['data']

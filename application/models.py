@@ -25,6 +25,17 @@ class Usuario(models.Model):
         return self.nome
 
 
+class Genero(models.Model):
+    nome = models.CharField('Nome', null=True, unique=True, max_length=200)
+
+    class Meta:
+        verbose_name = 'Gênero'
+        verbose_name_plural = 'Gêneros'
+
+    def __str__(self):
+        return self.nome
+
+
 class Filme(models.Model):
     titulo = models.CharField('Título', max_length=200)
     cartaz = StdImageField('Cartaz', null=True, blank=True, upload_to=get_file_path, variations={'thumb': {'width': 240, 'height': 356, 'crop': True}})
@@ -32,6 +43,7 @@ class Filme(models.Model):
     sinopse = models.TextField('Sinopse', max_length=1000)
     trailer = models.URLField('Trailer', null=True, blank=True)
     dataEstreia = models.DateField('Data de Estreia', null=True, blank=True, help_text='Use este formato: DD/MM/AAAA')
+    genero = models.ForeignKey(Genero, null=True, on_delete=models.DO_NOTHING)
 
     class Meta:
         verbose_name = 'Filme'

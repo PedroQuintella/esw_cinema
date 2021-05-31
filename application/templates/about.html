@@ -206,7 +206,7 @@
 		<!--grids-sec2-->
 		<section class="w3l-grids">
 			<div class="grids-main py-5">
-				<div class="container py-lg-4">
+				<div class="container py-lg-3">
 					<div class="headerhny-title">
 						<div class="w3l-title-grids">
 							<div class="headerhny-left">
@@ -219,10 +219,10 @@
 					<div class="owl-three owl-carousel owl-theme">
 						{% for lancamento in lancamentos %}
 							<div class="item vhny-grid">
-								<div class="box16">
+								<div class="box16 mb-0">
 									<a href="{% url 'filme-detalhe' id=lancamento.id %}">
 										<figure>
-											<img class="img-fluid" src="{{ lancamento.cartaz.thumb.url }}" alt="{{ lancamento.titulo }}">
+											<img class="img-fluid" src="{{ lancamento.cartaz.thumb.url }}" alt="">
 										</figure>
 										<div class="box-content">
 											<h4> <span class="post"><span class="fa fa-clock-o"> </span>{{ lancamento.duracao }}
@@ -235,7 +235,7 @@
 										<span class="fa fa-play video-icon" aria-hidden="true"></span>
 									</a>
 								</div>
-								<h3 class="title-lancamentosFilms"> <a class="title-gd" href="{% url 'generos' %}">{{ lancamento.titulo }}</a></h3>
+								<h3> <a class="title-gd" href="{% url 'filme-detalhe' id=lancamento.id %}">{{ lancamento.titulo }}</a></h3>
 								<p> </p>
 								<div class="button-center text-center mt-4">
 									<a href="{{ lancamento.trailer }}" class="btn watch-button">Trailer</a>

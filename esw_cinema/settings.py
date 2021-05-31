@@ -26,7 +26,7 @@ SECRET_KEY = '&5xy9%_aalr!a&ap8#&=c3$9spphdv@8^*@0g0mb1ho@b@h6qt'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['esw-cinema.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
