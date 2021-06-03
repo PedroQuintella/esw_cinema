@@ -5,6 +5,13 @@ from django.shortcuts import render
 from django.views.generic import TemplateView, ListView
 from .models import Filme, Sessao
 
+from django_weasyprint import WeasyTemplateView
+from django.core.files.storage import FileSystemStorage
+from django.template.loader import render_to_string
+from django.http import HttpResponse
+from weasyprint import HTML
+from tempfile import tempdir
+
 
 class IndexView(TemplateView):
     template_name = 'index.html'
@@ -24,6 +31,23 @@ class SobreView(TemplateView):
         context = super(SobreView, self).get_context_data(**kwargs)
         context['lancamentos'] = Filme.objects.order_by('-dataEstreia')[0:6]
         return context
+
+
+class RelatorioFilmesView(WeasyTemplateView):
+
+    def get(self, request, *args, **kwargs):
+        filmes = Filme.objects.order_by('-dataEstreia').all()
+
+        html_string = render_to_string('relatorio-filmes.html', {'filmes': filmes})
+
+        html = HTML(string=html_string, base_url=request.build_absolute_uri())
+        html.write_pdf(target='/Temp/relatorio-filmes.pdf')
+        fs = FileSystemStorage('/Temp')
+
+        with fs.open('relatorio-filmes.pdf') as pdf:
+            response = HttpResponse(pdf, content_type='application/pdf')
+            response['Content-Disposition'] = 'inline; filename="relatorio-filmes.pdf"'
+        return response
 
 
 class FilmesView(ListView):

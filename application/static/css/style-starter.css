@@ -19124,7 +19124,6 @@ div#small-dialog4 iframe,
 
 
 /*-- movie-detail.html --*/
-
 #movie-detail {
   margin-top: 10px;
   margin-bottom: 105px;
@@ -19233,6 +19232,21 @@ div#small-dialog4 iframe,
   color: var(--theme-title);
   border: solid 1px var(--theme-title);
   border-radius: 5px;
+}
+
+.logo_esw {
+  width: 250px;
+  margin-bottom: 50px;
+}
+
+.report-title {
+  Font-size: 30px;
+  color: var(--theme-rose);
+  margin-bottom: 50px;
+}
+
+.report-head {
+  color: var(--theme-rose);
 }
 /*-- //movie-detail.html --*/
 
