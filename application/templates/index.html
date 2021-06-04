@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load i18n %}
 {% load static %}
 {% block content %}
 
@@ -16,7 +17,7 @@
 									<span class="video-play-icon">
 										<span class="fa fa-play"></span>
 									</span>
-									<h6>Assista ao Trailer</h6>
+									<h6>{% trans 'Assista ao Trailer' %}</h6>
 								</a>
 								<!-- dialog itself, mfp-hide class is required to make dialog hidden -->
 								<div id="small-dialog1" class="zoom-anim-dialog mfp-hide">
@@ -36,7 +37,7 @@
 									<span class="video-play-icon">
 										<span class="fa fa-play"></span>
 									</span>
-									<h6>Assista ao Trailer</h6>
+									<h6>{% trans 'Assista ao Trailer' %}</h6>
 								</a>
 								<!-- dialog itself, mfp-hide class is required to make dialog hidden -->
 								<div id="small-dialog2" class="zoom-anim-dialog mfp-hide">
@@ -56,7 +57,7 @@
 									<span class="video-play-icon">
 										<span class="fa fa-play"></span>
 									</span>
-									<h6>Assista ao Trailer</h6>
+									<h6>{% trans 'Assista ao Trailer' %}</h6>
 								</a>
 								<!-- dialog itself, mfp-hide class is required to make dialog hidden -->
 								<div id="small-dialog3" class="zoom-anim-dialog mfp-hide">
@@ -76,7 +77,7 @@
 									<span class="video-play-icon">
 										<span class="fa fa-play"></span>
 									</span>
-									<h6>Assista ao Trailer</h6>
+									<h6>{% trans 'Assista ao Trailer' %}</h6>
 								</a>
 								<!-- dialog itself, mfp-hide class is required to make dialog hidden -->
 								<div id="small-dialog4" class="zoom-anim-dialog mfp-hide">
@@ -98,10 +99,10 @@
 				<div class="headerhny-title">
 					<div class="w3l-title-grids">
 						<div class="headerhny-left">
-							<h3 id="filmesDisponiveis" class="hny-title">Filmes Disponíveis</h3>
+							<h3 id="filmesDisponiveis" class="hny-title">{% trans 'Filmes Disponíveis' %}</h3>
 						</div>
 						<div class="headerhny-right text-lg-right">
-							<h4><a class="show-title" href="{% url 'filmes' %}">Ver tudo</a></h4>
+							<h4><a class="show-title" href="{% url 'filmes' %}">{% trans 'Ver tudo' %}</a></h4>
 						</div>
 					</div>
 				</div>
@@ -139,10 +140,10 @@
 				<div class="headerhny-title">
 					<div class="w3l-title-grids">
 						<div class="headerhny-left">
-							<h3 class="hny-title">Lançamentos</h3>
+							<h3 class="hny-title">{% trans 'Lançamentos' %}</h3>
 						</div>
 						<div class="headerhny-right text-lg-right">
-							<h4><a class="show-title" href="{% url 'relatorio-filmes' %}" target="_blank">Baixar Relatório</a></h4>
+							<h4><a class="show-title" href="{% url 'relatorio-filmes' %}" target="_blank">{% trans 'Baixar Relatório' %}</a></h4>
 						</div>
 					</div>
 				</div>
@@ -168,7 +169,7 @@
 							<h3> <a class="title-gd" href="{% url 'filme-detalhe' id=lancamento.id %}">{{ lancamento.titulo }}</a></h3>
 							<p> </p>
 							<div class="button-center text-center mt-4">
-								<a href="{{ lancamento.trailer }}" class="btn watch-button">Assista ao Trailer</a>
+								<a href="{{ lancamento.trailer }}" class="btn watch-button">{% trans 'Assista ao Trailer' %}</a>
 							</div>
 						</div>
 					{% endfor %}
@@ -191,7 +192,7 @@
 									<p>2019 ‧ Aventura ‧ 02h03min</p>
 									<a class="watch" href="https://www.youtube.com/watch?v=PEuMN4_lnPs"><span class="fa fa-play"
 											aria-hidden="true"></span>
-										Trailer</a>
+										{% trans 'Trailer' %}</a>
 								</div>
 							</div>
 						</div>
@@ -207,7 +208,7 @@
 									<p>2020 ‧ Família ‧ 01h41min</p>
 									<a class="watch" href="https://www.youtube.com/watch?v=iNWUTtYE7UM"><span class="fa fa-play"
 											aria-hidden="true"></span>
-										Trailer</a>
+										{% trans 'Trailer' %}</a>
 								</div>
 							</div>
 						</div>
@@ -223,7 +224,7 @@
 									<p>2020 ‧ Comédia ‧ 02h04min</p>
 									<a class="watch" href="https://www.youtube.com/watch?v=jCCGGYvFjlw"><span class="fa fa-play"
 											aria-hidden="true"></span>
-										Trailer</a>
+										{% trans 'Trailer' %}</a>
 								</div>
 							</div>
 						</div>
@@ -241,9 +242,9 @@
 					<!--Horizontal Tab-->
 					<div id="parentHorizontalTab">
 						<ul class="resp-tabs-list hor_1">
-							<li>Lançamentos</li>
-							<li>Filmes Disponíveis</li>
-							<li>Destaques</li>
+							<li>{% trans 'Lançamentos' %}</li>
+							<li>{% trans 'Filmes Disponíveis' %}</li>
+							<li>{% trans 'Destaques' %}</li>
 							<div class="clear"></div>
 						</ul>
 						<div class="resp-tabs-container hor_1">

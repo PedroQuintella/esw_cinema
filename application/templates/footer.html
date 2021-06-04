@@ -1,3 +1,4 @@
+{% load i18n %}
 {% load static %}
 <!-- footer-66 -->
     <footer class="w3l-footer">
@@ -28,30 +29,31 @@
 
 
 								<div class="col-md-3 col-sm-6 sub-two-right mt-5">
-									<h6>Filmes</h6>
+									<h6>{% trans 'Filmes' %}</h6>
 									<ul>
-										<li><a href="{% url 'index' %}">Filmes Disponíveis</a></li>
-										<li><a href="{% url 'index' %}">Lançamentos</a></li>
-										<li><a href="{% url 'filmes' %}">Todos os Filmes</a></li>
+										<li><a href="{% url 'index' %}">{% trans 'Filmes Disponíveis' %}</a></li>
+										<li><a href="{% url 'index' %}">{% trans 'Lançamentos' %}</a></li>
+										<li><a href="{% url 'filmes' %}">{% trans 'Todos os Filmes' %}</a></li>
+										<li><a href="{% url 'relatorio-filmes' %}" target="_blank">{% trans 'Relatório de Lançamentos' %}</a></li>
 									</ul>
 								</div>
 								<div class="col-md-3 col-sm-6 sub-two-right mt-5">
-									<h6>Informações</h6>
+									<h6>{% trans 'Informações' %}</h6>
 									<ul>
-										<li><a href="{% url 'index' %}">Início</a> </li>
-										<li><a href="{% url 'sobre' %}">Sobre</a> </li>
-										<li><a href="{% url 'filmes' %}">Filmes</a> </li>
-										<li><a href="{% url 'relatorio-filmes' %}" target="_blank">Relatório de Lançamentos</a></li>
+										<li><a href="{% url 'index' %}">{% trans 'Início' %}</a> </li>
+										<li><a href="{% url 'sobre' %}">{% trans 'Sobre' %}</a> </li>
+										<li><a href="{% url 'filmes' %}">{% trans 'Filmes' %}</a> </li>
+										<li><a href="{% url 'contato' %}">{% trans 'Contato' %}</a> </li>
 									</ul>
 								</div>
 								<div class="col-md-3 col-sm-6 sub-two-right mt-5">
-									<h6>Por Gêneros</h6>
+									<h6>{% trans 'Por Gêneros' %}</h6>
 									<ul>
-										<li><a href="{% url 'filmes' %}">Ação</a></li>
-										<li><a href="{% url 'filmes' %}">Drama</a></li>
-										<li><a href="{% url 'filmes' %}">Família</a></li>
-										<li><a href="{% url 'filmes' %}">Terror</a></li>
-										<li><a href="{% url 'filmes' %}">Comédia</a></li>
+										<li><a href="{% url 'filmes' %}">{% trans 'Ação' %}</a></li>
+										<li><a href="{% url 'filmes' %}">{% trans 'Drama' %}</a></li>
+										<li><a href="{% url 'filmes' %}">{% trans 'Família' %}</a></li>
+										<li><a href="{% url 'filmes' %}">{% trans 'Terror' %}</a></li>
+										<li><a href="{% url 'filmes' %}">{% trans 'Comédia' %}</a></li>
 									</ul>
 								</div>
 								<div class="col-md-3 col-sm-6 sub-two-right mt-5">

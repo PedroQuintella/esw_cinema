@@ -1,6 +1,7 @@
+{% load i18n %}
 {% load static %}
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="{{ lang }}">
 <head>
     <!-- Required meta tags -->
 	<meta charset="utf-8">
@@ -28,7 +29,7 @@
         <div class="w3l-breadcrumbs">
             <nav id="breadcrumbs" class="breadcrumbs">
                 <div class="container page-wrapper">
-                    <a href="{% url 'filmes' %}">Filmes</a> » <span class="breadcrumb_last" aria-current="page">{{ filme.titulo }}</span>
+                    <a href="{% url 'filmes' %}">{% trans 'Filmes' %}</a> » <span class="breadcrumb_last" aria-current="page">{{ filme.titulo }}</span>
                 </div>
             </nav>
         </div>
@@ -53,7 +54,7 @@
                                 </figure>
                             </div>
                             <div class="button-center text-center mt-4">
-								<a href="{{ filme.trailer }}" class="btn watch-button">Trailer</a>
+								<a href="{{ filme.trailer }}" class="btn watch-button">{% trans 'Trailer' %}</a>
 							</div>
                         </div>
                         <div class="details-div">
@@ -61,19 +62,19 @@
                                 <a href="{% url 'filmes' %}" class="movie-genre">{{ filme.genero }}</a>
                             </div>
                             <div>
-                                <h3 class="title-style">Duração</h3>
+                                <h3 class="title-style">{% trans 'Duração' %}</h3>
                                 <p class="movie-synopsis text-style">{{ filme.duracao }}</p>
                             </div>
                             <div>
-                                <h3 class="title-style">Sinopse</h3>
+                                <h3 class="title-style">{% trans 'Sinopse' %}</h3>
                                 <p class="movie-synopsis text-style">{{ filme.sinopse }}</p>
                             </div>
                             <div>
-                                <h3 class="title-style">Data de estreia</h3>
+                                <h3 class="title-style">{% trans 'Data de estreia' %}</h3>
                                 <p class="movie-synopsis text-style">{{ filme.dataEstreia }}</p>
                             </div>
                             <div>
-                                <h3 class="title-style">Sessões disponíveis</h3>
+                                <h3 class="title-style">{% trans 'Sessões disponíveis' %}</h3>
                                 <form class="session-form">
                                     <div class="btn-group btn-group-toggle" data-toggle="buttons">
                                       {% for s in page_obj %}
@@ -82,7 +83,7 @@
                                         </label>
                                       {% endfor %}
                                     </div>
-                                    <button type="submit" class="btn btn-primary buy-button">Comprar</button>
+                                    <button type="submit" class="btn btn-primary buy-button">{% trans 'Comprar' %}</button>
                                 </form>
                             </div>
                         </div>
@@ -92,10 +93,10 @@
 				<div class="headerhny-title">
 					<div class="w3l-title-grids">
 						<div class="headerhny-left">
-							<h3 class="hny-title">Lançamentos</h3>
+							<h3 class="hny-title">{% trans 'Lançamentos' %}</h3>
 						</div>
 						<div class="headerhny-right text-lg-right">
-							<h4><a class="show-title" href="{% url 'relatorio-filmes' %}" target="_blank">Baixar Relatório</a></h4>
+							<h4><a class="show-title" href="{% url 'relatorio-filmes' %}" target="_blank">{% trans 'Baixar Relatório' %}</a></h4>
 						</div>
 					</div>
 				</div>
@@ -121,7 +122,7 @@
 							<h3> <a class="title-gd" href="{% url 'filme-detalhe' id=lancamento.id %}">{{ lancamento.titulo }}</a></h3>
 							<p> </p>
 							<div class="button-center text-center mt-4">
-								<a href="{{ lancamento.trailer }}" class="btn watch-button">Assista ao Trailer</a>
+								<a href="{{ lancamento.trailer }}" class="btn watch-button">{% trans 'Assista ao Trailer' %}</a>
 							</div>
 						</div>
 					{% endfor %}

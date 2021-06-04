@@ -1,8 +1,5 @@
-from django.shortcuts import render
-
 # Create your views here.
-
-from django.views.generic import TemplateView, ListView
+from django.views.generic import TemplateView, ListView, FormView
 from .models import Filme, Sessao
 
 from django_weasyprint import WeasyTemplateView
@@ -10,7 +7,13 @@ from django.core.files.storage import FileSystemStorage
 from django.template.loader import render_to_string
 from django.http import HttpResponse
 from weasyprint import HTML
-from tempfile import tempdir
+
+from django.utils.translation import gettext as _
+from django.utils import translation
+
+from .forms import ContatoForm
+from django.urls import reverse_lazy
+from django.contrib import messages
 
 
 class IndexView(TemplateView):
@@ -18,9 +21,12 @@ class IndexView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(IndexView, self).get_context_data(**kwargs)
+        lang = translation.get_language()
+        context['lang'] = lang
         context['filmes'] = Filme.objects.order_by('-dataEstreia')[0:4]
         context['lancamentos'] = Filme.objects.order_by('-dataEstreia')[0:6]
         context['filmesDisponiveis'] = Filme.objects.order_by('-dataEstreia').all()
+        translation.activate(lang)
         return context
 
 
@@ -41,8 +47,8 @@ class RelatorioFilmesView(WeasyTemplateView):
         html_string = render_to_string('relatorio-filmes.html', {'filmes': filmes})
 
         html = HTML(string=html_string, base_url=request.build_absolute_uri())
-        html.write_pdf(target='/Temp/relatorio-filmes.pdf')
-        fs = FileSystemStorage('/Temp')
+        html.write_pdf(target='/tmp/relatorio-filmes.pdf')
+        fs = FileSystemStorage('/tmp')
 
         with fs.open('relatorio-filmes.pdf') as pdf:
             response = HttpResponse(pdf, content_type='application/pdf')
@@ -58,6 +64,25 @@ class FilmesView(ListView):
 
     def get_queryset(self):
         return Filme.objects.order_by('-dataEstreia').all()
+
+
+class ContatoView(FormView):
+    template_name = 'contact.html'
+    form_class = ContatoForm
+    success_url = reverse_lazy('contato')
+
+    def get_context_data(self, **kwargs):
+        context = super(ContatoView, self).get_context_data(**kwargs)
+        return context
+
+    def form_valid(self, form, *args, **kwargs):
+        form.send_mail()
+        messages.success(self.request, _('E-mail enviado com sucesso'), extra_tags='success')
+        return super(ContatoView, self).form_valid(form, *args, **kwargs)
+
+    def form_invalid(self, form, *args, **kwargs):
+        messages.error(self.request, _('Falha ao enviar e-mail'), extra_tags='danger')
+        return super(ContatoView, self).form_invalid(form, *args, **kwargs)
 
 
 class FilmeDetalheView(ListView):

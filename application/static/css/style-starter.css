@@ -19248,6 +19248,15 @@ div#small-dialog4 iframe,
 .report-head {
   color: var(--theme-rose);
 }
+
+#contact-title {
+  color: var(--theme-title);
+  margin: 100px 0px 100px 0px;
+}
+
+#contact {
+  margin-bottom: 195px;
+}
 /*-- //movie-detail.html --*/
 
 

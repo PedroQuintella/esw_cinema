@@ -1,10 +1,11 @@
+{% load i18n %}
 {% load static %}
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="{{ lang }}">
 
 <head>
     <meta charset="UTF-8">
-    <title>Relatório de Filmes</title>
+    <title>{% trans 'Relatório de Filmes' %}</title>
     <!-- Template CSS -->
 	<link rel="stylesheet" href="{% static 'css/style-starter.css' %}">
 </head>
@@ -12,15 +13,15 @@
 <body>
     <center>
         <img class="logo_esw" src="{% static 'images/logo_esw_cinema.png' %}">
-        <h1 class="report-title">Relatório de Filmes (Lançamentos)</h1>
+        <h1 class="report-title">{% trans 'Relatório de Filmes (Lançamentos)' %}</h1>
     </center>
     <table class="table table-striped">
         <thead class="report-head">
         <tr>
-            <th scope="col">Título do Filme</th>
-            <th scope="col">Gênero</th>
-            <th scope="col">Duração</th>
-            <th scope="col">Data de Estreia</th>
+            <th scope="col">{% trans 'Título do Filme' %}</th>
+            <th scope="col">{% trans 'Gênero' %}</th>
+            <th scope="col">{% trans 'Duração' %}</th>
+            <th scope="col">{% trans 'Data de Estreia' %}</th>
         </tr>
         </thead>
 

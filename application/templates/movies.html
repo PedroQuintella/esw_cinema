@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load i18n %}
 {% load static %}
 {% block content %}
 
@@ -6,7 +7,7 @@
 	<div class="w3l-breadcrumbs">
 		<nav id="breadcrumbs" class="breadcrumbs">
 			<div class="container page-wrapper">
-			<a href="{% url 'index' %}">Início</a> » <span class="breadcrumb_last" aria-current="page">Filmes</span>
+			<a href="{% url 'index' %}">{% trans 'Início' %}</a> » <span class="breadcrumb_last" aria-current="page">{% trans 'Filmes' %}</span>
 			</div>
 		</nav>
 	</div>
@@ -17,7 +18,7 @@
 				<div class="headerhny-title">
 					<div class="w3l-title-grids">
 						<div class="headerhny-left">
-							<h3 class="hny-title">Filmes</h3>
+							<h3 class="hny-title">{% trans 'Filmes' %}</h3>
 						</div>
 						<div class="headerhny-right text-lg-right">
 						</div>
