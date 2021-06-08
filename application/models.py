@@ -48,6 +48,7 @@ class Filme(models.Model):
     class Meta:
         verbose_name = _('Filme')
         verbose_name_plural = _('Filmes')
+        ordering = ['id']
 
     def __str__(self):
         return self.titulo
@@ -113,12 +114,13 @@ class Sala(models.Model):
 class Sessao(models.Model):
     data = models.DateField(_('Data'), help_text=_('Use este formato: DD/MM/AAAA'))
     horario = models.TimeField(_('Horário'), help_text=_('Use este formato: HH:MM'))
-    filme = models.ForeignKey(Filme, on_delete=models.CASCADE)
+    filme = models.ForeignKey(Filme, related_name='sessoes', on_delete=models.CASCADE)
     sala = models.ForeignKey(Sala, null=True, on_delete=models.SET_NULL)
 
     class Meta:
         verbose_name = _('Sessão')
         verbose_name_plural = _('Sessões')
+        ordering = ['id']
 
     def __str__(self):
         return f'{self.data}, {self.horario}, {self.sala}, {self.filme}'

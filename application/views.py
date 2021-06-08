@@ -1,6 +1,6 @@
 # Create your views here.
 from django.views.generic import TemplateView, ListView, FormView
-from .models import Filme, Sessao
+from .models import Filme, Sessao, Genero, Usuario, Assento, Sala
 
 from django_weasyprint import WeasyTemplateView
 from django.core.files.storage import FileSystemStorage
@@ -14,6 +14,14 @@ from django.utils import translation
 from .forms import ContatoForm
 from django.urls import reverse_lazy
 from django.contrib import messages
+
+from rest_framework.decorators import action
+from rest_framework.response import Response
+from rest_framework import permissions
+from rest_framework import viewsets
+
+from . import serializers
+from application.serializers import GeneroSerializer, FilmeSerializer, UsuarioSerializer, SalaSerializer, SessaoSerializer, AssentoSerializer
 
 
 class IndexView(TemplateView):
@@ -101,3 +109,61 @@ class FilmeDetalheView(ListView):
     def get_queryset(self):
         id = self.kwargs['id']
         return Sessao.objects.filter(filme_id=id).order_by('data')
+
+
+class FilmeViewSet(viewsets.ModelViewSet):
+    permission_classes = (permissions.DjangoModelPermissions, )
+
+    queryset = Filme.objects.all()
+    serializer_class = FilmeSerializer
+
+    @action(detail=True, methods=['get'])
+    def sessoes(self, request, pk=None):
+        sessoes = Sessao.objects.filter(filme_id=pk)
+        page = self.paginate_queryset(sessoes)
+
+        if page is not None:
+            serializer = SessaoSerializer(page, many=True)
+            return self.get_paginated_response(serializer.data)
+
+        serializer = SessaoSerializer(sessoes, many=True)
+        return Response(serializer.data)
+
+
+class GeneroViewSet(viewsets.ModelViewSet):
+    permission_classes = (permissions.DjangoModelPermissions,)
+
+    queryset = Genero.objects.all()
+    serializer_class = GeneroSerializer
+
+    @action(detail=True, methods=['get'])
+    def filmes(self, request, pk=None):
+        filmes = Filme.objects.filter(genero_id=pk)
+        page = self.paginate_queryset(filmes)
+
+        if page is not None:
+            serializer = FilmeSerializer(page, many=True)
+            return self.get_paginated_response(serializer.data)
+
+        serializer = FilmeSerializer(filmes, many=True)
+        return Response(serializer.data)
+
+
+class SessaoViewSet(viewsets.ModelViewSet):
+    queryset = Sessao.objects.all()
+    serializer_class = SessaoSerializer
+
+
+class UsuarioViewSet(viewsets.ModelViewSet):
+    queryset = Usuario.objects.all()
+    serializer_class = UsuarioSerializer
+
+
+class SalaViewSet(viewsets.ModelViewSet):
+    queryset = Sala.objects.all()
+    serializer_class = SalaSerializer
+
+
+class AssentoViewSet(viewsets.ModelViewSet):
+    queryset = Assento.objects.all()
+    serializer_class = AssentoSerializer

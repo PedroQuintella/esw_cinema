@@ -1,6 +1,17 @@
 from django.urls import path
 
-from .views import IndexView, SobreView, FilmesView, ContatoView, FilmeDetalheView, RelatorioFilmesView
+from rest_framework.routers import SimpleRouter
+
+from .views import IndexView, SobreView, FilmesView, ContatoView, FilmeDetalheView, RelatorioFilmesView, \
+    FilmeViewSet, GeneroViewSet, SessaoViewSet, UsuarioViewSet, SalaViewSet, AssentoViewSet
+
+router = SimpleRouter()
+router.register('filmes', FilmeViewSet)
+router.register('generos', GeneroViewSet)
+router.register('sessoes', SessaoViewSet)
+router.register('usuarios', UsuarioViewSet)
+router.register('salas', SalaViewSet)
+router.register('assentos', AssentoViewSet)
 
 
 urlpatterns = [
