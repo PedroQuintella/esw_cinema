@@ -20,6 +20,9 @@ from rest_framework.response import Response
 from rest_framework import permissions
 from rest_framework import viewsets
 
+from django.db.models import Count
+from chartjs.views.lines import BaseLineChartView
+
 from . import serializers
 from application.serializers import GeneroSerializer, FilmeSerializer, UsuarioSerializer, SalaSerializer, SessaoSerializer, AssentoSerializer
 
@@ -109,6 +112,25 @@ class FilmeDetalheView(ListView):
     def get_queryset(self):
         id = self.kwargs['id']
         return Sessao.objects.filter(filme_id=id).order_by('data')
+
+
+class DadosGraficoFilmesView(BaseLineChartView):
+
+    def get_labels(self):
+        labels = []
+        queryset = Genero.objects.order_by('id')
+        for genero in queryset:
+            labels.append(genero.nome)
+        return labels
+
+    def get_data(self):
+        resultado = []
+        dados = []
+        queryset = Genero.objects.order_by('id').annotate(total=Count('filme'))
+        for linha in queryset:
+            dados.append(int(linha.total))
+        resultado.append(dados)
+        return resultado
 
 
 class FilmeViewSet(viewsets.ModelViewSet):

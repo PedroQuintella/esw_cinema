@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load i18n %}
 {% load static %}
+{% load bootstrap4 %}
 {% block content %}
 
 	<!--/breadcrumbs -->
@@ -11,7 +12,8 @@
 			</div>
 		</nav>
 	</div>
- <!--//breadcrumbs -->
+ 	<!--//breadcrumbs -->
+
 	<!-- /about-->
 	<div class="w3l-ab-grids py-5">
 		<div class="container py-lg-4">
@@ -24,117 +26,26 @@
 					<p class="mt-3">{% trans 'Todos os filmes do mundo em um só lugar. De premiados antigos a lançamentos recentes, confira tudo só aqui no ESW Cinema.' %}</p>
 				</div>
 			</div>
-		   
-
 		</div>
 	</div>
 	<!-- //about-->
-	<!--grids-sec1-->
+
+	<!-- Start Achivement Area -->
 		<section class="w3l-team" id="team">
 			<div class="grids-main py-5">
 				<div class="container py-lg-4">
-					<div class="headerhny-title">
-						<h3 class="hny-title">Os melhores atores</h3>
-					</div>
-					<div class="owl-team owl-carousel owl-theme">
-						<div class="item vhny-grid">
-							<div class="d-grid team-info">
-								<div class="column position-relative">
-									<a href="#url"><img src="{% static 'images/a1.jpg' %}" alt="" class="img-fluid rounded team-image" /></a>
-								</div>
-								<div class="column text-center">
-									<h3 class="name-pos"><a href="#url">Dwayne johnson</a></h3>
-
-									<div class="social">
-										<a href="#facebook" class="facebook"><span class="fa fa-facebook" aria-hidden="true"></span></a>
-										<a href="#twitter" class="twitter"><span class="fa fa-twitter" aria-hidden="true"></span></a>
-										<a href="#linkedin" class="linkedin"><span class="fa fa-linkedin" aria-hidden="true"></span></a>
-									</div>
-								</div>
-							</div>
-
-						</div>
-						<div class="item vhny-grid">
-							<div class="box16">
-								<div class="d-grid team-info">
-									<div class="column position-relative">
-										<a href="#url"><img src="{% static 'images/a2.jpg' %}" alt="" class="img-fluid rounded team-image" /></a>
-									</div>
-									<div class="column text-center">
-										<h3 class="name-pos"><a href="#url">Karen Gillan</a></h3>
-
-										<div class="social">
-											<a href="#facebook" class="facebook"><span class="fa fa-facebook" aria-hidden="true"></span></a>
-											<a href="#twitter" class="twitter"><span class="fa fa-twitter" aria-hidden="true"></span></a>
-											<a href="#linkedin" class="linkedin"><span class="fa fa-linkedin" aria-hidden="true"></span></a>
-										</div>
-									</div>
-								</div>
-							</div>
-
-						</div>
-						<div class="item vhny-grid">
-							<div class="box16">
-								<div class="d-grid team-info">
-									<div class="column position-relative">
-										<a href="#url"><img src="{% static 'images/a3.jpg' %}" alt="" class="img-fluid rounded team-image" /></a>
-									</div>
-									<div class="column text-center">
-										<h3 class="name-pos"><a href="#url">Chris Hemsworth</a></h3>
-
-										<div class="social">
-											<a href="#facebook" class="facebook"><span class="fa fa-facebook" aria-hidden="true"></span></a>
-											<a href="#twitter" class="twitter"><span class="fa fa-twitter" aria-hidden="true"></span></a>
-											<a href="#linkedin" class="linkedin"><span class="fa fa-linkedin" aria-hidden="true"></span></a>
-										</div>
-									</div>
-								</div>
-							</div>
-
-						</div>
-						<div class="item vhny-grid">
-							<div class="box16">
-								<div class="d-grid team-info">
-									<div class="column position-relative">
-										<a href="#url"><img src="{% static 'images/a4.jpg' %}" alt="" class="img-fluid rounded team-image" /></a>
-									</div>
-									<div class="column text-center">
-										<h3 class="name-pos"><a href="#url">Elton John</a></h3>
-
-										<div class="social">
-											<a href="#facebook" class="facebook"><span class="fa fa-facebook" aria-hidden="true"></span></a>
-											<a href="#twitter" class="twitter"><span class="fa fa-twitter" aria-hidden="true"></span></a>
-											<a href="#linkedin" class="linkedin"><span class="fa fa-linkedin" aria-hidden="true"></span></a>
-										</div>
-									</div>
-								</div>
-							</div>
-
-						</div>
-						<div class="item vhny-grid">
-							<div class="box16">
-								<div class="d-grid team-info">
-									<div class="column position-relative">
-										<a href="#url"><img src="{% static 'images/a5.jpg' %}" alt="" class="img-fluid rounded team-image" /></a>
-									</div>
-									<div class="column text-center">
-										<h3 class="name-pos"><a href="#url">Liu Yifei</a></h3>
-										<div class="social">
-											<a href="#facebook" class="facebook"><span class="fa fa-facebook" aria-hidden="true"></span></a>
-											<a href="#twitter" class="twitter"><span class="fa fa-twitter" aria-hidden="true"></span></a>
-											<a href="#linkedin" class="linkedin"><span class="fa fa-linkedin" aria-hidden="true"></span></a>
-										</div>
-									</div>
-								</div>
-							</div>
-
-						</div>
+					<h1 id="chart-title">{% trans 'O que há por aqui' %}</h1>
+					<div class="row">
+						<canvas id="grafico-filmes" height="50"></canvas>
 					</div>
 				</div>
 			</div>
 		</section>
-		<!--//grids-sec1-->
-		<!--/testimonials-->
+	<!-- End Achivement Area -->
+	{% bootstrap_javascript jquery='full' %}
+
+
+	<!--/testimonials-->
 		<section class="w3l-clients" id="clients">
 			<!-- /grids -->
 			<div class="cusrtomer-layout py-5">
@@ -203,8 +114,9 @@
 			</div>
 			<!-- //grids -->
 		</section>
-		<!--//testimonials-->
-		<!--grids-sec2-->
+	<!--//testimonials-->
+
+	<!--grids-sec1-->
 		<section class="w3l-grids">
 			<div class="grids-main py-5">
 				<div class="container py-lg-3">
@@ -251,7 +163,38 @@
 	<!--grids-sec1-->
 
 	<!-- JavaScript -->
+		<!-- Start Achivement Area -->
+			<script type="text/javascript" src="{% static 'js/Chart.min.js' %}"></script>
+
+			<script type="text/javascript">
+				$.get('{% url "dados-grafico-filmes" %}', function(dados){
+				  var ctx = $("#grafico-filmes").get(0).getContext("2d");
+				  rotulos = dados['labels']
+				  valores = dados['datasets'][0]['data']
+
+				  new Chart(ctx, {
+					  type: 'doughnut',
+					  data: {
+						  labels: rotulos,
+						  datasets: [{
+							  data: valores,
+							  backgroundColor: [
+								  'rgba(153, 102, 255, 0.9)',
+								  'rgba(255, 206, 86, 0.9)',
+								  'rgba(255, 159, 64, 0.9)',
+								  'rgba(75, 192, 192, 0.9)',
+								  'rgba(255, 99, 132, 0.9)',
+								  'rgba(54, 162, 235, 0.9)',
+							  ]
+						  }]
+					  }
+				  });
+				});
+			</script>
+		<!-- End Achivement Area -->
+
 		<script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+
 		<!-- stats -->
 		<script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
 		<script src="{% static 'js/jquery.countup.js' %}"></script>
@@ -259,10 +202,13 @@
 			$('.counter').countUp();
 		</script>
 		<!-- //stats -->
+
 		<!--/theme-change-->
 		<script src="{% static 'js/theme-change.js' %}"></script>
 		<!-- //theme-change-->
+
 		<script src="{% static 'js/owl.carousel.js' %}"></script>
+
 		<!-- script for banner slider-->
 		<script>
 			$(document).ready(function () {
@@ -329,6 +275,7 @@
 			})
 		</script>
 		<!-- //script -->
+
 		<!-- for tesimonials carousel slider -->
 		<script>
 			$(document).ready(function () {
@@ -355,6 +302,7 @@
 			})
 		</script>
 		<!-- //script -->
+
 		<!-- script for owlcarousel -->
 		<!-- disable body scroll which navbar is in active -->
 		<script>
@@ -394,7 +342,7 @@
 			});
 		</script>
 		<!--//MENU-JS-->
+
 		<script src="{% static 'js/bootstrap.min.js' %}"></script>
 	<!--//JavaScript -->
-
 {% endblock %}

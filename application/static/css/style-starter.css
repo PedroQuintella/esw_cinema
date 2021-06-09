@@ -19257,6 +19257,15 @@ div#small-dialog4 iframe,
 #contact {
   margin-bottom: 195px;
 }
+
+#chart-title {
+  font-size: 26px;
+  line-height: 36px;
+  color: var(--theme-title);
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 70px;
+}
 /*-- //movie-detail.html --*/
 
 

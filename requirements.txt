@@ -13,6 +13,7 @@ dj-database-url==0.5.0
 dj-static==0.0.6
 Django==2.2.19
 django-bootstrap4==3.0.1
+django-chartjs==2.2.1
 django-filter==2.4.0
 django-session-csrf==0.7.1
 django-stdimage==5.3.0

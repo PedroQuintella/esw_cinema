@@ -2,8 +2,8 @@ from django.urls import path
 
 from rest_framework.routers import SimpleRouter
 
-from .views import IndexView, SobreView, FilmesView, ContatoView, FilmeDetalheView, RelatorioFilmesView, \
-    FilmeViewSet, GeneroViewSet, SessaoViewSet, UsuarioViewSet, SalaViewSet, AssentoViewSet
+from .views import IndexView, SobreView, FilmesView, ContatoView, FilmeDetalheView, DadosGraficoFilmesView, \
+    RelatorioFilmesView, FilmeViewSet, GeneroViewSet, SessaoViewSet, UsuarioViewSet, SalaViewSet, AssentoViewSet
 
 router = SimpleRouter()
 router.register('filmes', FilmeViewSet)
@@ -21,4 +21,5 @@ urlpatterns = [
     path('contato/', ContatoView.as_view(), name='contato'),
     path('filme-detalhe/<int:id>/', FilmeDetalheView.as_view(), name='filme-detalhe'),
     path('relatorio-filmes/', RelatorioFilmesView.as_view(), name='relatorio-filmes'),
+    path('dados-grafico-filmes/', DadosGraficoFilmesView.as_view(), name='dados-grafico-filmes'),
 ]
