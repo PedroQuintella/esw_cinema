@@ -111,11 +111,24 @@ class Sala(models.Model):
         return str(self.numero)
 
 
+class Assento(models.Model):
+    numero = models.IntegerField(_('Assento'))
+    sala = models.ForeignKey(Sala, on_delete=models.CASCADE)
+
+    class Meta:
+        verbose_name = _('Assento')
+        verbose_name_plural = _('Assentos')
+
+    def __str__(self):
+        return f'{self.numero} (Sala {self.sala})'
+
+
 class Sessao(models.Model):
     data = models.DateField(_('Data'), help_text=_('Use este formato: DD/MM/AAAA'))
     horario = models.TimeField(_('Horário'), help_text=_('Use este formato: HH:MM'))
     filme = models.ForeignKey(Filme, related_name='sessoes', on_delete=models.CASCADE)
     sala = models.ForeignKey(Sala, null=True, on_delete=models.SET_NULL)
+    assentos = models.ManyToManyField(Assento)
 
     class Meta:
         verbose_name = _('Sessão')
@@ -124,23 +137,6 @@ class Sessao(models.Model):
 
     def __str__(self):
         return f'{self.data}, {self.horario}, {self.sala}, {self.filme}'
-
-
-class Assento(models.Model):
-    numero = models.IntegerField(_('Assento'))
-    sala = models.ForeignKey(Sala, on_delete=models.CASCADE)
-    STATUS = (
-        ('Disponível', _('Disponível')),
-        ('Indisponível', _('Indisponível')),
-    )
-    disponibilidade = models.CharField(_('Disponibilidade'), max_length=100, choices=STATUS)
-
-    class Meta:
-        verbose_name = _('Assento')
-        verbose_name_plural = _('Assentos')
-
-    def __str__(self):
-        return f'{self.numero} (Sala {self.sala})'
 
 
 class Ingresso(models.Model):

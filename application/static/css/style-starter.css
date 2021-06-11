@@ -19123,6 +19123,18 @@ div#small-dialog4 iframe,
 /*--//ccontact--*/
 
 
+/*-- about.html --*/
+#chart-title {
+  font-size: 26px;
+  line-height: 36px;
+  color: var(--theme-title);
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 70px;
+}
+/*--//about.html --*/
+
+
 /*-- movie-detail.html --*/
 #movie-detail {
   margin-top: 10px;
@@ -19217,14 +19229,6 @@ div#small-dialog4 iframe,
   border-color: var(--theme-rose);
 }
 
-.pagination-div {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-}
-
 .movie-genre, .movie-genre:focus, .movie-genre:hover {
   font-size: 14px;
   margin-top: 1.5rem;
@@ -19233,7 +19237,21 @@ div#small-dialog4 iframe,
   border: solid 1px var(--theme-title);
   border-radius: 5px;
 }
+/*-- //movie-detail.html --*/
 
+
+/*-- movies.html --*/
+.pagination-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+/*-- //movies.html --*/
+
+
+/*-- relatorio-filmes.html --*/
 .logo_esw {
   width: 250px;
   margin-bottom: 50px;
@@ -19248,7 +19266,10 @@ div#small-dialog4 iframe,
 .report-head {
   color: var(--theme-rose);
 }
+/*-- //relatorio-filmes.html --*/
 
+
+/*-- contact.html --*/
 #contact-title {
   color: var(--theme-title);
   margin: 100px 0px 100px 0px;
@@ -19257,16 +19278,7 @@ div#small-dialog4 iframe,
 #contact {
   margin-bottom: 195px;
 }
-
-#chart-title {
-  font-size: 26px;
-  line-height: 36px;
-  color: var(--theme-title);
-  text-transform: uppercase;
-  font-weight: 700;
-  margin-bottom: 70px;
-}
-/*-- //movie-detail.html --*/
+/*-- //contact.html --*/
 
 
 .w3l-footer {

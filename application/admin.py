@@ -37,7 +37,7 @@ class SessaoAdmin(admin.ModelAdmin):
 
 @admin.register(Assento)
 class AssentoAdmin(admin.ModelAdmin):
-    list_display = ('numero', 'sala', 'disponibilidade')
+    list_display = ('numero', 'sala')
 
 
 @admin.register(Ingresso)

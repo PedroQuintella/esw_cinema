@@ -1,0 +1,379 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-06-09 18:04-0300\n"
+"PO-Revision-Date: 2021-06-09 19:25-0300\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"X-Generator: Poedit 2.4.3\n"
+
+#: .\application\forms.py:7 .\application\models.py:15
+#: .\application\models.py:29 .\application\templates\contact.html:41
+msgid "Nome"
+msgstr "Name"
+
+#: .\application\forms.py:8
+msgid "E-mail"
+msgstr "Email"
+
+#: .\application\forms.py:9 .\application\templates\contact.html:53
+msgid "Assunto"
+msgstr "Subject"
+
+#: .\application\forms.py:10 .\application\templates\contact.html:59
+msgid "Mensagem"
+msgstr "Message"
+
+#: .\application\models.py:16
+msgid "CPF"
+msgstr "CPF"
+
+#: .\application\models.py:16 .\application\models.py:90
+msgid "Digite sem pontos e traços."
+msgstr "Type without dots and dashes."
+
+#: .\application\models.py:17
+msgid "Email"
+msgstr "Email"
+
+#: .\application\models.py:18
+msgid "Senha"
+msgstr "Password"
+
+#: .\application\models.py:21
+msgid "Usuário"
+msgstr "Username"
+
+#: .\application\models.py:22
+msgid "Usuários"
+msgstr "Users"
+
+#: .\application\models.py:32 .\application\templates\relatorio-filmes.html:22
+msgid "Gênero"
+msgstr "Gender"
+
+#: .\application\models.py:33
+msgid "Gêneros"
+msgstr "Genres"
+
+#: .\application\models.py:40
+msgid "Título"
+msgstr "Title"
+
+#: .\application\models.py:41
+msgid "Cartaz"
+msgstr "Poster"
+
+#: .\application\models.py:42 .\application\templates\movie-detail.html:65
+#: .\application\templates\relatorio-filmes.html:23
+msgid "Duração"
+msgstr "duration"
+
+#: .\application\models.py:42
+msgid "Use este formato: 02h30min"
+msgstr "Use this format: 02h30min"
+
+#: .\application\models.py:43 .\application\templates\movie-detail.html:69
+msgid "Sinopse"
+msgstr "synopsis"
+
+#: .\application\models.py:44 .\application\templates\index.html:195
+#: .\application\templates\index.html:211
+#: .\application\templates\index.html:227
+#: .\application\templates\movie-detail.html:57
+msgid "Trailer"
+msgstr "trailer"
+
+#: .\application\models.py:45 .\application\templates\relatorio-filmes.html:24
+msgid "Data de Estreia"
+msgstr "Release Date"
+
+#: .\application\models.py:45 .\application\models.py:115
+msgid "Use este formato: DD/MM/AAAA"
+msgstr "Use this format: DD/MM/YYYY"
+
+#: .\application\models.py:49
+msgid "Filme"
+msgstr "Movie"
+
+#: .\application\models.py:50 .\application\templates\footer.html:32
+#: .\application\templates\footer.html:45
+#: .\application\templates\movie-detail.html:32
+#: .\application\templates\movies.html:10
+#: .\application\templates\movies.html:21
+#: .\application\templates\navbar.html:30
+msgid "Filmes"
+msgstr "Movies"
+
+#: .\application\models.py:58 .\application\models.py:147
+msgid "Código"
+msgstr "Code"
+
+#: .\application\models.py:89
+msgid "Cidade"
+msgstr "City"
+
+#: .\application\models.py:90
+msgid "CEP"
+msgstr "Zipcode"
+
+#: .\application\models.py:91
+msgid "Endereço"
+msgstr "Address"
+
+#: .\application\models.py:92
+msgid "Valor"
+msgstr "Value"
+
+#: .\application\models.py:96
+msgid "Compra"
+msgstr "purchase"
+
+#: .\application\models.py:97
+msgid "Compras"
+msgstr "Shopping"
+
+#: .\application\models.py:104
+msgid "Número"
+msgstr "Number"
+
+#: .\application\models.py:107
+msgid "Sala"
+msgstr "Room"
+
+#: .\application\models.py:108
+msgid "Salas"
+msgstr "Rooms"
+
+#: .\application\models.py:115
+msgid "Data"
+msgstr "Date"
+
+#: .\application\models.py:116
+msgid "Horário"
+msgstr "Schedule"
+
+#: .\application\models.py:116
+msgid "Use este formato: HH:MM"
+msgstr "Use this format: HH:MM"
+
+#: .\application\models.py:121
+msgid "Sessão"
+msgstr "session"
+
+#: .\application\models.py:122
+msgid "Sessões"
+msgstr "Sessions"
+
+#: .\application\models.py:130 .\application\models.py:139
+msgid "Assento"
+msgstr "seat"
+
+#: .\application\models.py:133
+msgid "Disponível"
+msgstr "Available"
+
+#: .\application\models.py:134
+msgid "Indisponível"
+msgstr "Unavailable"
+
+#: .\application\models.py:136
+msgid "Disponibilidade"
+msgstr "Availability"
+
+#: .\application\models.py:140
+msgid "Assentos"
+msgstr "Seats"
+
+#: .\application\models.py:154
+msgid "Ingresso"
+msgstr "ticket"
+
+#: .\application\models.py:155
+msgid "Ingressos"
+msgstr "Tickets"
+
+#: .\application\templates\about.html:11
+#: .\application\templates\contact.html:10
+#: .\application\templates\footer.html:43
+#: .\application\templates\movies.html:10
+#: .\application\templates\navbar.html:24
+msgid "Início"
+msgstr "Home"
+
+#: .\application\templates\about.html:11 .\application\templates\footer.html:44
+#: .\application\templates\navbar.html:27
+msgid "Sobre"
+msgstr "About"
+
+#: .\application\templates\about.html:25
+msgid "O melhor do Entretenimento"
+msgstr "The Best of Entertainment"
+
+#: .\application\templates\about.html:26
+msgid ""
+"Todos os filmes do mundo em um só lugar. De premiados antigos a lançamentos "
+"recentes, confira tudo só aqui no ESW Cinema."
+msgstr ""
+"All the movies in the world in one place. From old award winners to recent "
+"releases, check it out just here at ESW Cinema."
+
+#: .\application\templates\about.html:37
+msgid "O que há por aqui"
+msgstr "What's around here"
+
+#: .\application\templates\about.html:54
+msgid "Avaliações"
+msgstr "Evaluations"
+
+#: .\application\templates\about.html:63
+msgid ""
+"É o melhor site para conferir os novos lançamentos do Cinema! Não precisar "
+"ficar pesquisando filmes na internet é uma grande economia de tempo."
+msgstr ""
+"It is the best site to check out the new releases of Cinema! Not having to "
+"keep searching movies on the internet is a great time savings."
+
+#: .\application\templates\about.html:80
+msgid ""
+"Agora fico atualizado sobre os novos filmes do cinema. O ESW Cinema é um "
+"verdadeiro facilitador."
+msgstr ""
+"Now I keep up to date on the new movies in the movies. ESW Cinema is a real "
+"facilitator."
+
+#: .\application\templates\about.html:97
+msgid ""
+"O mais legal é que existem filmes para todos os gostos e idades. Agora sei "
+"quais filmes posso assistir com minhas filhas."
+msgstr ""
+"The coolest thing is that there are movies for all tastes and ages. Now I "
+"know what movies I can watch with my daughters."
+
+#: .\application\templates\about.html:126
+#: .\application\templates\footer.html:35
+#: .\application\templates\index.html:143
+#: .\application\templates\index.html:245
+#: .\application\templates\movie-detail.html:96
+msgid "Lançamentos"
+msgstr "Releases"
+
+#: .\application\templates\about.html:129
+#: .\application\templates\index.html:146
+#: .\application\templates\movie-detail.html:99
+msgid "Baixar Relatório"
+msgstr "Download Report"
+
+#: .\application\templates\contact.html:10
+#: .\application\templates\footer.html:46
+#: .\application\templates\navbar.html:33
+msgid "Contato"
+msgstr "Contact"
+
+#: .\application\templates\contact.html:19
+msgid "Contate-nos"
+msgstr "Contact us"
+
+#: .\application\templates\contact.html:63
+msgid "Enviar e-mail"
+msgstr "Send email"
+
+#: .\application\templates\footer.html:34
+#: .\application\templates\index.html:102
+#: .\application\templates\index.html:246
+msgid "Filmes Disponíveis"
+msgstr "Movies Available"
+
+#: .\application\templates\footer.html:36
+msgid "Todos os Filmes"
+msgstr "All Movies"
+
+#: .\application\templates\footer.html:37
+msgid "Relatório de Lançamentos"
+msgstr "Release Report"
+
+#: .\application\templates\footer.html:41
+msgid "Informações"
+msgstr "Information"
+
+#: .\application\templates\footer.html:50
+msgid "Por Gêneros"
+msgstr "By Genres"
+
+#: .\application\templates\footer.html:52
+msgid "Ação"
+msgstr "Action"
+
+#: .\application\templates\footer.html:53
+msgid "Drama"
+msgstr "drama"
+
+#: .\application\templates\footer.html:54
+msgid "Família"
+msgstr "family"
+
+#: .\application\templates\footer.html:55
+msgid "Terror"
+msgstr "terror"
+
+#: .\application\templates\footer.html:56
+msgid "Comédia"
+msgstr "comedy"
+
+#: .\application\templates\index.html:20 .\application\templates\index.html:40
+#: .\application\templates\index.html:60 .\application\templates\index.html:80
+#: .\application\templates\index.html:172
+#: .\application\templates\movie-detail.html:125
+msgid "Assista ao Trailer"
+msgstr "Watch the Trailer"
+
+#: .\application\templates\index.html:105
+msgid "Ver tudo"
+msgstr "View All"
+
+#: .\application\templates\index.html:247
+msgid "Destaques"
+msgstr "Highlights"
+
+#: .\application\templates\movie-detail.html:73
+msgid "Data de estreia"
+msgstr "Release date"
+
+#: .\application\templates\movie-detail.html:77
+msgid "Sessões disponíveis"
+msgstr "Sessions available"
+
+#: .\application\templates\movie-detail.html:86
+msgid "Comprar"
+msgstr "Buy"
+
+#: .\application\templates\relatorio-filmes.html:8
+msgid "Relatório de Filmes"
+msgstr "Movie Report"
+
+#: .\application\templates\relatorio-filmes.html:16
+msgid "Relatório de Filmes (Lançamentos)"
+msgstr "Movie Report (Releases)"
+
+#: .\application\templates\relatorio-filmes.html:21
+msgid "Título do Filme"
+msgstr "Movie Title"
+
+#: .\application\views.py:91
+msgid "E-mail enviado com sucesso"
+msgstr "E-mail successfully sent"
+
+#: .\application\views.py:95
+msgid "Falha ao enviar e-mail"
+msgstr "Failed to send email"
